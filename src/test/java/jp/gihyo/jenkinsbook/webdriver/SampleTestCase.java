@@ -13,7 +13,7 @@ import jp.gihyo.jenkinsbook.page.TopPage;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -24,8 +24,12 @@ public class SampleTestCase {
 	
 	@BeforeClass
 	public static void setUpClass() throws IOException {
-		prop.load(new FileInputStream("target\\test-classes\\selenium.properties"));
-		driver = new FirefoxDriver();
+		prop.load(new FileInputStream("target/test-classes/selenium.properties"));
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("headless");
+		options.addArguments("--no-sandbox");
+		driver = new ChromeDriver(options);
 	}
 	
 	@AfterClass
