@@ -22,7 +22,7 @@
     
     <!-- Selenium Properties -->
     <selenium-java.version>3.14.0</selenium-java.version>
-    <selenium.baseUrl>http://localhost:7777</selenium.baseUrl>
+    <selenium.baseUrl>http://3.17.4.16:8080</selenium.baseUrl>
   </properties>
   
   <dependencies>
